@@ -28,7 +28,7 @@ namespace BrokenCalculator.Tests
     [TestCase(4, 10)]
     public void Multiply_TwoNumbers_ReturnProduct(int first, int second)
     {
-      BrokenCalculator brokencalculator = new BrokenCalculator();
+      BrokenCalculator brokenCalculator = new BrokenCalculator();
       int actual = brokenCalculator.Multiply(first, second);
       int expected = first * second;
       Assert.AreEqual(actual, expected);

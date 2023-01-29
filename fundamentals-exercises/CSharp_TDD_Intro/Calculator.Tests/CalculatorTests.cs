@@ -23,6 +23,17 @@ namespace Calculator.Tests
       Assert.That(actual, Is.EqualTo(expected));
     }
 
+    [Test]
+    [TestCase(1, 1)]
+
+    public void Multiply_TwoNumbers_ReturnProduct(int first, int second)
+    {
+      Calculator calculator = new Calculator();
+      int actual = calculator.Multiply(first, second);
+      int expected = first * second;
+      Assert.That(actual, Is.EqualTo(expected));
+    }
+
 
   }
 }

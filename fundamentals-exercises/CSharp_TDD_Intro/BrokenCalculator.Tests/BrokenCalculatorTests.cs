@@ -21,17 +21,17 @@ namespace BrokenCalculator.Tests
       Assert.AreEqual(actual, expected);
     }
 
-    // [Test]
-    // [TestCase(1, 2)]
-    // [TestCase(2, 2)]
-    // [TestCase(3, 2)]
-    // [TestCase(4, 10)]
-    // public void Multiply_TwoNumbers_ReturnProduct(int first, int second)
-    // {
-    //   BrokenCalculator brokencalculator = new BrokenCalculator();
-    //   int actual = brokenCalculator.Multiply(first, second);
-    //   int expected = first * second;
-    //   Assert.AreEqual(actual, expected);
-    // }
+    [Test]
+    [TestCase(1, 2)]
+    [TestCase(2, 2)]
+    [TestCase(3, 2)]
+    [TestCase(4, 10)]
+    public void Multiply_TwoNumbers_ReturnProduct(int first, int second)
+    {
+      BrokenCalculator brokencalculator = new BrokenCalculator();
+      int actual = brokenCalculator.Multiply(first, second);
+      int expected = first * second;
+      Assert.AreEqual(actual, expected);
+    }
   }
 }

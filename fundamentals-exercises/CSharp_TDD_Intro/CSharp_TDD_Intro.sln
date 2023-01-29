@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokenCalculator", "BrokenC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokenCalculator.Tests", "BrokenCalculator.Tests\BrokenCalculator.Tests.csproj", "{784E55F4-B43E-4B00-B9B4-67B67F9AB507}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo", "ToDo\ToDo.csproj", "{A5323D8B-F4BA-4063-8D75-F653E20EB386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Tests", "ToDo.Tests\ToDo.Tests.csproj", "{B2B49EA8-2EE1-4F2C-AD2C-7CB9943AF460}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,13 @@ Global
 		{784E55F4-B43E-4B00-B9B4-67B67F9AB507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{784E55F4-B43E-4B00-B9B4-67B67F9AB507}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{784E55F4-B43E-4B00-B9B4-67B67F9AB507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5323D8B-F4BA-4063-8D75-F653E20EB386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5323D8B-F4BA-4063-8D75-F653E20EB386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5323D8B-F4BA-4063-8D75-F653E20EB386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5323D8B-F4BA-4063-8D75-F653E20EB386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B49EA8-2EE1-4F2C-AD2C-7CB9943AF460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B49EA8-2EE1-4F2C-AD2C-7CB9943AF460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B49EA8-2EE1-4F2C-AD2C-7CB9943AF460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B49EA8-2EE1-4F2C-AD2C-7CB9943AF460}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

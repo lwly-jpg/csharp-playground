@@ -16,7 +16,7 @@ namespace PriceDisplay.Tests
     {
         PriceDisplay priceDisplay = new PriceDisplay();
         string actual = priceDisplay.GetPriceLabel(item, price);
-        string expected = "The price for item {0:d} is {1:0.00}";
+        string expected = $"The price for item {item} is {price:0.00}";
         Assert.That(actual, Is.EqualTo(expected));
     }
 

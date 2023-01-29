@@ -25,6 +25,10 @@ namespace Calculator.Tests
 
     [Test]
     [TestCase(1, 1)]
+    [TestCase(1, 2)]
+    [TestCase(2, 3)]
+    [TestCase(3, 5)]
+    [TestCase(8, 10)]
 
     public void Multiply_TwoNumbers_ReturnProduct(int first, int second)
     {

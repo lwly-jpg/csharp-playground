@@ -15,8 +15,8 @@ namespace CSharp.Intro
   {
     public void Calculate()
     {
-      int result = 2 + 3;
-      Console.WriteLine("The result is {0:d}", result);
+      double result = 2.5 + 2.5;
+      Console.WriteLine("The result is {0:0.000000}", result);
     }
   }
 
@@ -25,7 +25,7 @@ namespace CSharp.Intro
     {
       DateTime dt = DateTime.Now;
       String time = dt.ToString("HH:mm");
-      Console.WriteLine("The current time is {0:d}", time);
+      Console.WriteLine("The current time is {0:t}", time);
     }
   }
 }

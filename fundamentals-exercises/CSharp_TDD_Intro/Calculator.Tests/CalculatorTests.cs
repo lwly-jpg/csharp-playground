@@ -1,20 +1,24 @@
-namespace Calculator.Tests;
-
-public class CalculatorTests
+namespace Calculator.Tests
 {
-  [Test]
-  public void Setup_Test()
+  public class CalculatorTests
   {
-    Assert.Pass();
-  }
 
-  [Test]
-  [TestCase(1, 1)]
-  public void Add_TwoNumbers_ReturnTotal(int first, int second)
-  {
-    Calculator calculator = new Calculator();
-    int actual = calculator.Add(first, second);
-    int expected = first + second;
-    Assert.AreEqual(actual, expected);
+    [Test]
+    public void Setup_Test() {
+      Assert.Pass();
+    }
+
+    [Test]
+    [TestCase(1, 1)]
+ 
+    public void Add_TwoNumbers_ReturnTotal(int first, int second)
+    {
+      Calculator calculator = new Calculator();
+      int actual = calculator.Add(first, second);
+      int expected = first + second;
+      Assert.That(actual, Is.EqualTo(expected));
+    }
+
+
   }
 }

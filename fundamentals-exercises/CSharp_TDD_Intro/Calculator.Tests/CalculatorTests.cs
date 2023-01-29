@@ -10,6 +10,10 @@ namespace Calculator.Tests
 
     [Test]
     [TestCase(1, 1)]
+    [TestCase(1, 2)]
+    [TestCase(2, 3)]
+    [TestCase(3, 5)]
+    [TestCase(8, 12)]
  
     public void Add_TwoNumbers_ReturnTotal(int first, int second)
     {

@@ -11,6 +11,10 @@ namespace PriceDisplay.Tests
 
     [Test]
     [TestCase("kettle", 12.00)]
+    [TestCase("fridge", 350.60)]
+    [TestCase("chocolate bar", 1.00)]
+    [TestCase("car", 2999.99)]
+    [TestCase("cling film", 123.00)]
 
     public void Print_ItemName_Price(string item, double price)
     {

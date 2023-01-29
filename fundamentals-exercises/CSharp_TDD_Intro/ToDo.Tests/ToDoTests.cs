@@ -7,4 +7,14 @@ public class ToDoTests
     {
         Assert.Pass();
     }
+
+    [Test]
+    public void Initialised_Empty_TaskList()
+    {
+        ToDo toDo = new ToDo();
+        int expected = toDo.tasks.Length;
+        int actual = 0;
+        Assert.That(expected, Is.EqualTo(actual));
+    }
+
 }

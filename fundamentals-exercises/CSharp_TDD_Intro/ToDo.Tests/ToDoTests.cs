@@ -13,9 +13,21 @@ public class ToDoTests
     public void Initialised_Empty_TaskList()
     {
         ToDo toDo = new ToDo();
-        int expected = toDo.tasks.Length;
-        int actual = 0;
-        Assert.That(expected, Is.EqualTo(actual));
+        int actual = toDo.tasks.Count;
+        int expected = 0;
+        Assert.That(actual, Is.EqualTo(expected));
+    }
+
+    [Test]
+    [TestCase("Go to the gym")]
+
+    public void Add_New_Task(string task)
+    {
+        ToDo toDo = new ToDo();
+        toDo.Add(task);
+        int actual = toDo.tasks.Count;
+        int expected = 1;
+        Assert.That(actual, Is.EqualTo(expected));
     }
 
 }

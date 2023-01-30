@@ -11,7 +11,7 @@ public class GameTests
   [Test]
   public void Game_GetWordToGuess_ReturnsWordToGuess()
   {
-    Game game = new Game("BAKER");
+    Game game = new Game("BAKERS");
     Assert.AreEqual("B_____", game.GetWordToGuess());
 
   }

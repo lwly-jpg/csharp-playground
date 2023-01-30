@@ -30,4 +30,19 @@ public class ToDoTests
         Assert.That(actual, Is.EqualTo(expected));
     }
 
+    [Test]
+    [TestCase("Go to the gym", "Clean flat", "Learn C#")]
+
+    public void Add_Multiple_Tasks(string a, string b, string c)
+    {
+        ToDo toDo = new ToDo();
+        toDo.Add(a);
+        toDo.Add(b);
+        toDo.Add(c);
+        int actual = toDo.tasks.Count;
+        int expected = 3;
+        Assert.That(actual, Is.EqualTo(expected));
+    }
+    
+
 }

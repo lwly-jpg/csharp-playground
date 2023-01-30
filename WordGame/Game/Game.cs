@@ -8,10 +8,11 @@ namespace Game
   {
     private string solution;
     private int attempts;
+    private readonly string[] DICTIONARY = {"BAKERS", "SWEETS", "CODING", "LONDON", "TRAVEL"};
 
-    public Game(string word)
+    public Game()
     {
-      solution = word;
+      solution = GetRandomWordFromDictionary();
       attempts = 10;
     }
     public string GetWordToGuess()
@@ -31,6 +32,13 @@ namespace Game
     public int GetRemainingAttempts()
     {
       return attempts;
+    }
+
+    public string GetRandomWordFromDictionary()
+    {
+      Random random = new Random();
+      int randomNumber = random.Next(0, DICTIONARY.Length);
+      return DICTIONARY[randomNumber];
     }
   }
 }

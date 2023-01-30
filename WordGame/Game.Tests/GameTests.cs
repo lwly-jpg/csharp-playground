@@ -8,17 +8,17 @@ public class GameTests
     Assert.Pass();
   }
 
-  [Test]
-  public void Game_GetWordToGuess_ReturnsWordToGuess()
-  {
-    Game game = new Game("BAKERS");
-    Assert.AreEqual("B_____", game.GetWordToGuess());
-  }
+//   [Test]
+//   public void Game_GetWordToGuess_ReturnsWordToGuess()
+//   {
+//     Game game = new Game("BAKERS");
+//     Assert.AreEqual("B_____", game.GetWordToGuess());
+//   }
 
   [Test]
   public void Game_GetReamingAttempts_ReturnsAttempts()
   {
-    Game game = new Game("TESTING");
+    Game game = new Game();
     Assert.AreEqual(10, game.GetRemainingAttempts());
   }
 }

@@ -8,10 +8,11 @@ namespace Game
   {
     private string solution;
     private int attempts;
+    public WordChooser chooser = new WordChooser();
 
-    public Game()
+    public Game(WordChooser chooser)
     {
-      // solution = GetRandomWordFromDictionary();
+      solution = chooser.GetRandomWordFromDictionary();
       attempts = 10;
     }
     public string GetWordToGuess()
@@ -43,7 +44,7 @@ public class WordChooser
 {
   public readonly string[] DICTIONARY = { "BAKERS", "SWEETS", "CODING", "LONDON", "TRAVEL" };
 
-  public string GetRandomWordFromDictionary()
+  public virtual string GetRandomWordFromDictionary()
   {
     Random random = new Random();
     int randomNumber = random.Next(0, DICTIONARY.Length);

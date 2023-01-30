@@ -1,4 +1,5 @@
 namespace Game.Tests;
+using NSubstitute;
 
 public class GameTests
 {
@@ -8,17 +9,20 @@ public class GameTests
     Assert.Pass();
   }
 
-//   [Test]
-//   public void Game_GetWordToGuess_ReturnsWordToGuess()
-//   {
-//     Game game = new Game("BAKERS");
-//     Assert.AreEqual("B_____", game.GetWordToGuess());
-//   }
+  [Test]
+  public void Game_GetWordToGuess_ReturnsWordToGuess()
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
+    Game game = new Game(mockChooser);
+    Assert.AreEqual("B_____", game.GetWordToGuess());
+  }
 
   [Test]
   public void Game_GetReamingAttempts_ReturnsAttempts()
   {
-    Game game = new Game();
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    Game game = new Game(mockChooser);
     Assert.AreEqual(10, game.GetRemainingAttempts());
   }
 

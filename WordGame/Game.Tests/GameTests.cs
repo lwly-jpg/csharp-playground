@@ -21,4 +21,11 @@ public class GameTests
     Game game = new Game();
     Assert.AreEqual(10, game.GetRemainingAttempts());
   }
+
+  [Test]
+  public void WordChooser_Constructs_With_Dictionary()
+  {
+    WordChooser chooser = new WordChooser();
+    Assert.NotNull(chooser.DICTIONARY);
+  }
 }

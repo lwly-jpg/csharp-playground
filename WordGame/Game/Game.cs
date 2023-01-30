@@ -3,26 +3,29 @@ using System.Text;
 
 namespace Game
 {
-  
+
   public class Game
   {
     private string solution;
     private int attempts;
-    private readonly string[] DICTIONARY = {"BAKERS", "SWEETS", "CODING", "LONDON", "TRAVEL"};
 
     public Game()
     {
-      solution = GetRandomWordFromDictionary();
+      // solution = GetRandomWordFromDictionary();
       attempts = 10;
     }
     public string GetWordToGuess()
     {
       StringBuilder builder = new StringBuilder();
-      for (int i = 0; i < solution.Length; i++) {
+      for (int i = 0; i < solution.Length; i++)
+      {
         char currentLetter = solution[0];
-        if (i == 0) {
+        if (i == 0)
+        {
           builder.Append(currentLetter);
-        } else {
+        }
+        else
+        {
           builder.Append("_");
         }
       }
@@ -33,12 +36,17 @@ namespace Game
     {
       return attempts;
     }
+  }
+}
 
-    public string GetRandomWordFromDictionary()
-    {
-      Random random = new Random();
-      int randomNumber = random.Next(0, DICTIONARY.Length);
-      return DICTIONARY[randomNumber];
-    }
+public class WordChooser
+{
+  public readonly string[] DICTIONARY = { "BAKERS", "SWEETS", "CODING", "LONDON", "TRAVEL" };
+
+  public string GetRandomWordFromDictionary()
+  {
+    Random random = new Random();
+    int randomNumber = random.Next(0, DICTIONARY.Length);
+    return DICTIONARY[randomNumber];
   }
 }

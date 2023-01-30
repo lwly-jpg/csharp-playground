@@ -8,5 +8,12 @@ namespace ToDo
     {
       tasks.Add(task);
     }
+
+    public string Get()
+    {
+      string allTasks = string.Join( ", ", tasks);
+      return allTasks;
+
+    }
   }
 }

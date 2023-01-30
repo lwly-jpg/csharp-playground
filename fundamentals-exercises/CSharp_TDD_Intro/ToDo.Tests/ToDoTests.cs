@@ -43,6 +43,20 @@ public class ToDoTests
         int expected = 3;
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [Test]
+    [TestCase("Go to the gym", "Clean flat", "Learn C#")]
+
+    public void Get_ToDo_List(string a, string b, string c)
+    {
+        ToDo toDo = new ToDo();
+        toDo.Add(a);
+        toDo.Add(b);
+        toDo.Add(c);
+        string actual = toDo.Get();
+        string expected = $"{a}, {b}, {c}";
+        Assert.That(actual, Is.EqualTo(expected));
+    }
     
 
 }

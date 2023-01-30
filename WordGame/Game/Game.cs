@@ -7,10 +7,12 @@ namespace Game
   public class Game
   {
     private string solution;
+    private int attempts;
 
     public Game(string word)
     {
       solution = word;
+      attempts = 10;
     }
     public string GetWordToGuess()
     {
@@ -24,6 +26,11 @@ namespace Game
         }
       }
       return builder.ToString();
+    }
+
+    public int GetRemainingAttempts()
+    {
+      return attempts;
     }
   }
 }

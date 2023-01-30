@@ -13,6 +13,12 @@ public class GameTests
   {
     Game game = new Game("BAKERS");
     Assert.AreEqual("B_____", game.GetWordToGuess());
+  }
 
+  [Test]
+  public void Game_GetReamingAttempts_ReturnsAttempts()
+  {
+    Game game = new Game("TESTING");
+    Assert.AreEqual(10, game.GetRemainingAttempts());
   }
 }

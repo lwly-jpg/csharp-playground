@@ -35,11 +35,21 @@ public class GameTests
 
   [Test]
   [TestCase('B')]
-  public void GuessLetter_Checks_Letter_Present(char a)
+  public void GuessLetter_Returns_True_When_Letter_Present(char a)
   {
     WordChooser mockChooser = Substitute.For<WordChooser>();
     mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
     Game game = new Game(mockChooser);
     Assert.AreEqual(true, game.CheckLetter(a));
+  }
+
+  [Test]
+  [TestCase('X')]
+  public void GuessLetter_Returns_False_When_Letter_Not_Present(char a)
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
+    Game game = new Game(mockChooser);
+    Assert.That(game.CheckLetter(a), Is.EqualTo(false));
   }
 }

@@ -15,7 +15,7 @@ public class GameTests
     WordChooser mockChooser = Substitute.For<WordChooser>();
     mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
     Game game = new Game(mockChooser);
-    Assert.AreEqual("B_____", game.GetWordToGuess());
+    Assert.That(game.GetWordToGuess(), Is.EqualTo("B_____"));
   }
 
   [Test]
@@ -23,7 +23,7 @@ public class GameTests
   {
     WordChooser mockChooser = Substitute.For<WordChooser>();
     Game game = new Game(mockChooser);
-    Assert.AreEqual(10, game.GetRemainingAttempts());
+    Assert.That(game.GetRemainingAttempts(), Is.EqualTo(10));
   }
 
   [Test]
@@ -40,7 +40,7 @@ public class GameTests
     WordChooser mockChooser = Substitute.For<WordChooser>();
     mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
     Game game = new Game(mockChooser);
-    Assert.AreEqual(true, game.CheckLetter(a));
+    Assert.That(game.CheckLetter(a), Is.EqualTo(true));
   }
 
   [Test]

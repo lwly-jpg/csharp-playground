@@ -55,7 +55,7 @@ public class GameTests
     Assert.That(game.GetRemainingAttempts(), Is.EqualTo(9));
   }
 
-    [Test]
+  [Test]
   public void Game_GetWordToGuess_ShowsGuessedLetters()
   {
     WordChooser mockChooser = Substitute.For<WordChooser>();
@@ -63,5 +63,21 @@ public class GameTests
     Game game = new Game(mockChooser);
     game.CheckLetter('A');
     Assert.That(game.GetWordToGuess(), Is.EqualTo("BA____"));
+  }
+
+  [Test]
+  public void Game_GetWordToGuess_ShowsMultipleGuessedLetters()
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
+    Game game = new Game(mockChooser);
+    game.CheckLetter('A');
+    game.CheckLetter('C');
+    game.CheckLetter('E');
+    game.CheckLetter('G');
+    game.CheckLetter('S');
+    game.CheckLetter('T');
+    game.CheckLetter('R');
+    Assert.That(game.GetWordToGuess(), Is.EqualTo("BA_ERS"));
   }
 }

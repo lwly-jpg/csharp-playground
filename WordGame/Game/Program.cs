@@ -31,6 +31,11 @@ namespace Game
           Console.WriteLine("Wrong...");
         }
       }
+
+      if (!game.win && game.attempts == 0)
+      {
+        Console.WriteLine($"Better luck next time! Solution: {game.solution}");
+      }
     }
   }
 }

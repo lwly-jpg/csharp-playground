@@ -7,7 +7,7 @@ namespace Game
 
   public class Game
   {
-    private string solution;
+    public string solution;
     public int attempts;
     public List<char> guessedLetters;
     public bool win;

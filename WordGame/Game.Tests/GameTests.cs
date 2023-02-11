@@ -95,4 +95,19 @@ public class GameTests
     game.GetWordToGuess();
     Assert.That(game.win, Is.EqualTo(true));
   }
+
+    [Test]
+  public void Game_DeclaresWin_IfAllLettersGuessed_WordWithDuplicateLetters()
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("COOLEST");
+    Game game = new Game(mockChooser);
+    game.CheckLetter('l');
+    game.CheckLetter('o');
+    game.CheckLetter('E');
+    game.CheckLetter('s');
+    game.CheckLetter('T');
+    game.GetWordToGuess();
+    Assert.That(game.win, Is.EqualTo(true));
+  }
 }

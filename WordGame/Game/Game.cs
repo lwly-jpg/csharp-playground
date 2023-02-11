@@ -17,7 +17,7 @@ namespace Game
     {
       solution = chooser.GetRandomWordFromDictionary();
       attempts = 10;
-      guessedLetters = new List<char>{};
+      guessedLetters = new List<char> { };
       win = false;
     }
     public string GetWordToGuess()
@@ -30,7 +30,8 @@ namespace Game
         {
           builder.Append(currentLetter);
         }
-        else if (guessedLetters.Contains(currentLetter)) {
+        else if (guessedLetters.Contains(currentLetter))
+        {
           builder.Append(currentLetter);
         }
         else
@@ -38,9 +39,9 @@ namespace Game
           builder.Append("_");
         }
       }
-      
+
       string attemptedSolution = builder.ToString();
-      
+
       if (!attemptedSolution.Contains("_"))
       {
         win = true;
@@ -61,7 +62,9 @@ namespace Game
       {
         guessedLetters.Add(letter);
         return true;
-      } else {
+      }
+      else
+      {
         attempts -= 1;
         return false;
       }

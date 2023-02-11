@@ -96,7 +96,7 @@ public class GameTests
     Assert.That(game.win, Is.EqualTo(true));
   }
 
-    [Test]
+  [Test]
   public void Game_DeclaresWin_IfAllLettersGuessed_WordWithDuplicateLetters()
   {
     WordChooser mockChooser = Substitute.For<WordChooser>();

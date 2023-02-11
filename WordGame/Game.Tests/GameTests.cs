@@ -80,4 +80,19 @@ public class GameTests
     game.CheckLetter('R');
     Assert.That(game.GetWordToGuess(), Is.EqualTo("BA_ERS"));
   }
+
+  [Test]
+  public void Game_DeclaresWin_IfAllLettersGuessed()
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
+    Game game = new Game(mockChooser);
+    game.CheckLetter('A');
+    game.CheckLetter('E');
+    game.CheckLetter('K');
+    game.CheckLetter('S');
+    game.CheckLetter('R');
+    game.GetWordToGuess();
+    Assert.That(game.win, Is.EqualTo(true));
+  }
 }

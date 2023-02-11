@@ -32,4 +32,14 @@ public class GameTests
     WordChooser chooser = new WordChooser();
     Assert.NotNull(chooser.DICTIONARY);
   }
+
+  [Test]
+  [TestCase('B')]
+  public void GuessLetter_Checks_Letter_Present(char a)
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
+    Game game = new Game(mockChooser);
+    Assert.AreEqual(true, game.CheckLetter(a));
+  }
 }

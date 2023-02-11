@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.Linq;
 
 namespace Game
 {
@@ -36,6 +37,16 @@ namespace Game
     public int GetRemainingAttempts()
     {
       return attempts;
+    }
+
+    public bool CheckLetter(char letter)
+    {
+      if (solution.Contains(letter))
+      {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 }

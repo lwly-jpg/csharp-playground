@@ -45,6 +45,7 @@ namespace Game
       {
         return true;
       } else {
+        attempts -= 1;
         return false;
       }
     }

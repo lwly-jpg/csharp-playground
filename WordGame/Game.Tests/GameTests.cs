@@ -54,4 +54,14 @@ public class GameTests
     Assert.That(game.CheckLetter(a), Is.EqualTo(false));
     Assert.That(game.GetRemainingAttempts(), Is.EqualTo(9));
   }
+
+    [Test]
+  public void Game_GetWordToGuess_ShowsGuessedLetters()
+  {
+    WordChooser mockChooser = Substitute.For<WordChooser>();
+    mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
+    Game game = new Game(mockChooser);
+    game.CheckLetter('A');
+    Assert.That(game.GetWordToGuess(), Is.EqualTo("BA____"));
+  }
 }

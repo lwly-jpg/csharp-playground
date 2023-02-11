@@ -23,9 +23,12 @@ namespace Game
       StringBuilder builder = new StringBuilder();
       for (int i = 0; i < solution.Length; i++)
       {
-        char currentLetter = solution[0];
+        char currentLetter = solution[i];
         if (i == 0)
         {
+          builder.Append(currentLetter);
+        }
+        else if (guessedLetters.Contains(currentLetter)) {
           builder.Append(currentLetter);
         }
         else

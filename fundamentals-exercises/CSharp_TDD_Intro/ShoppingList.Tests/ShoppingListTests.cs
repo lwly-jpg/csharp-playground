@@ -7,4 +7,11 @@ public class ShoppingListTests
     {
         Assert.Pass();
     }
+
+    [Test]
+    public void Initialised_Empty_ShoppingList()
+    {
+        ShoppingList list = new ShoppingList();
+        Assert.That(list.items.Count, Is.EqualTo(0));
+    }
 }

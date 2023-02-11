@@ -8,7 +8,7 @@ namespace Game
   public class Game
   {
     private string solution;
-    private int attempts;
+    public int attempts;
     public List<char> guessedLetters;
     public WordChooser chooser = new WordChooser();
 

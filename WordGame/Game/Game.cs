@@ -9,12 +9,14 @@ namespace Game
   {
     private string solution;
     private int attempts;
+    public List<char> guessedLetters;
     public WordChooser chooser = new WordChooser();
 
     public Game(WordChooser chooser)
     {
       solution = chooser.GetRandomWordFromDictionary();
       attempts = 10;
+      guessedLetters = new List<char>{};
     }
     public string GetWordToGuess()
     {
@@ -43,6 +45,7 @@ namespace Game
     {
       if (solution.Contains(letter))
       {
+        guessedLetters.Add(letter);
         return true;
       } else {
         attempts -= 1;

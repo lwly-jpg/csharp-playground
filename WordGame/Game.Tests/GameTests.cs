@@ -41,6 +41,7 @@ public class GameTests
     mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
     Game game = new Game(mockChooser);
     Assert.That(game.CheckLetter(a), Is.EqualTo(true));
+    Assert.That(game.guessedLetters[0], Is.EqualTo('B'));
   }
 
   [Test]

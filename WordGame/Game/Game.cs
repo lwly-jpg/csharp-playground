@@ -56,6 +56,7 @@ namespace Game
 
     public bool CheckLetter(char letter)
     {
+      letter = Char.ToUpper(letter);
       if (solution.Contains(letter))
       {
         guessedLetters.Add(letter);

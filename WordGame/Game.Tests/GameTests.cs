@@ -71,13 +71,13 @@ public class GameTests
     WordChooser mockChooser = Substitute.For<WordChooser>();
     mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
     Game game = new Game(mockChooser);
-    game.CheckLetter('A');
+    game.CheckLetter('a');
     game.CheckLetter('C');
-    game.CheckLetter('E');
+    game.CheckLetter('e');
     game.CheckLetter('G');
     game.CheckLetter('S');
     game.CheckLetter('T');
-    game.CheckLetter('R');
+    game.CheckLetter('r');
     Assert.That(game.GetWordToGuess(), Is.EqualTo("BA_ERS"));
   }
 
@@ -88,9 +88,9 @@ public class GameTests
     mockChooser.GetRandomWordFromDictionary().Returns("BAKERS");
     Game game = new Game(mockChooser);
     game.CheckLetter('A');
-    game.CheckLetter('E');
+    game.CheckLetter('e');
     game.CheckLetter('K');
-    game.CheckLetter('S');
+    game.CheckLetter('s');
     game.CheckLetter('R');
     game.GetWordToGuess();
     Assert.That(game.win, Is.EqualTo(true));

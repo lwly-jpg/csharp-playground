@@ -14,7 +14,15 @@ namespace Game
         Console.WriteLine(game.GetWordToGuess());
         Console.WriteLine($"Enter one letter to guess ({game.attempts} attemps remaining):");
         char guess = Console.ReadKey(true).KeyChar;
-        game.CheckLetter(guess);
+        bool result = game.CheckLetter(guess);
+        if (result)
+        {
+          Console.WriteLine("Right!");
+        } 
+        else
+        {
+          Console.WriteLine("Wrong...");
+        }
       }
     }
   }

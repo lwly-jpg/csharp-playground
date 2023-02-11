@@ -27,4 +27,17 @@ public class ShoppingListTests
         list.Add(e);
         Assert.That(list.items.Count, Is.EqualTo(5));
     }
+
+    [Test]
+    [TestCase("Potatoes", "Carrots", "Peas")]
+    public void Get_Items_In_ShoppingList(string a, string b, string c)
+    {
+        ShoppingList list = new ShoppingList();
+        list.Add(a);
+        list.Add(b);
+        list.Add(c);
+        List<string> expected = new List<string>{"Potatoes", "Carrots", "Peas"};
+        Assert.That(list.Get(), Is.EqualTo(expected));
+
+    }
 }

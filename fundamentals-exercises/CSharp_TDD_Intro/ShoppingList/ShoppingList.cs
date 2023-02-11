@@ -8,5 +8,10 @@ namespace ShoppingList
     {
       items.Add(item);
     }
+
+    public List<string> Get()
+    {
+      return items;
+    }
   }
 }

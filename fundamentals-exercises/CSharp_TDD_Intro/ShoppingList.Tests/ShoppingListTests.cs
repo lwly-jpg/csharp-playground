@@ -16,27 +16,23 @@ public class ShoppingListTests
     }
 
     [Test]
-    [TestCase("rice", "avocados", "tomatoes", "red onions", "beef")]
-    public void Add_Items_To_ShoppingList(string a, string b, string c, string d, string e)
+    public void Add_Items_To_ShoppingList()
     {
         ShoppingList list = new ShoppingList();
-        list.Add(a);
-        list.Add(b);
-        list.Add(c);
-        list.Add(d);
-        list.Add(e);
-        Assert.That(list.items.Count, Is.EqualTo(5));
+        list.Add(new ShoppingItem("rice", 1.99));
+        list.Add(new ShoppingItem("avocados", 1.50));
+        Assert.That(list.items.Count, Is.EqualTo(2));
     }
 
-    [Test]
-    [TestCase("Potatoes", "Carrots", "Peas")]
-    public void Get_Items_In_ShoppingList(string a, string b, string c)
+    [Test]    
+    public void Get_Items_In_ShoppingList()
     {
         ShoppingList list = new ShoppingList();
-        list.Add(a);
-        list.Add(b);
-        list.Add(c);
-        List<string> expected = new List<string>{"Potatoes", "Carrots", "Peas"};
+        ShoppingItem rice = new ShoppingItem("rice", 1.99);
+        ShoppingItem avocado = new ShoppingItem("avocado", 1.50);
+        list.Add(rice);
+        list.Add(avocado);
+        List<ShoppingItem> expected = new List<ShoppingItem>{rice, avocado};
         Assert.That(list.Get(), Is.EqualTo(expected));
 
     }

@@ -2,16 +2,25 @@ namespace ShoppingList
 {
   public class ShoppingList
   {
-    public List<string> items = new List<string>();
+    public List<ShoppingItem> items = new List<ShoppingItem>();
 
-    public void Add(string item)
+    public void Add(ShoppingItem item)
     {
       items.Add(item);
     }
 
-    public List<string> Get()
+    public List<ShoppingItem> Get()
     {
       return items;
+    }
+  }
+
+  public class ShoppingItem
+  {
+    public ShoppingItem(string name, double price)
+    {
+      string itemName = name;
+      double itemPrice = price;
     }
   }
 }

@@ -35,4 +35,19 @@ public class FizzBuzzTests
     string expected = "Fizz";
     Assert.That(expected, Is.EqualTo(actual));
   }
+
+  [Test]
+  [TestCase(5)]
+  [TestCase(20)]
+  [TestCase(55)]
+  [TestCase(95)]
+  [TestCase(880)]
+
+  public void For_NumbersDivisibleByFive_ReturnsBuzz(int x)
+  {
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    string actual = fizzBuzz.For(x);
+    string expected = "Buzz";
+    Assert.That(expected, Is.EqualTo(actual));
+  }
 }

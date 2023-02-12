@@ -19,7 +19,7 @@ public class FizzBuzzTests
     FizzBuzz fizzBuzz = new FizzBuzz();
     string actual = fizzBuzz.For(x);
     string expected = x.ToString();
-    Assert.That(expected, Is.EqualTo(actual));
+    Assert.That(actual, Is.EqualTo(expected));
   }
 
   [Test]
@@ -33,7 +33,7 @@ public class FizzBuzzTests
     FizzBuzz fizzBuzz = new FizzBuzz();
     string actual = fizzBuzz.For(x);
     string expected = "Fizz";
-    Assert.That(expected, Is.EqualTo(actual));
+    Assert.That(actual, Is.EqualTo(expected));
   }
 
   [Test]
@@ -48,6 +48,22 @@ public class FizzBuzzTests
     FizzBuzz fizzBuzz = new FizzBuzz();
     string actual = fizzBuzz.For(x);
     string expected = "Buzz";
-    Assert.That(expected, Is.EqualTo(actual));
+    Assert.That(actual, Is.EqualTo(expected));
   }
+
+  [Test]
+  [TestCase(15)]
+  [TestCase(60)]
+  [TestCase(150)]
+  [TestCase(330)]
+  [TestCase(990)]
+
+  public void For_NumbersDivisibleByThreeAndFive_ReturnsFizzBuzz(int x)
+  {
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    string actual = fizzBuzz.For(x);
+    string expected = "FizzBuzz";
+    Assert.That(actual, Is.EqualTo(expected));
+  }
+  
 }

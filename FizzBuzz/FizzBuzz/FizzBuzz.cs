@@ -2,9 +2,16 @@ namespace FizzBuzz
 {
   public class FizzBuzz
   {
-    public int For(int num)
+    public string For(int num)
     {
-      return num;
+      if (num % 3 == 0) 
+      {
+        return "Fizz";
+      }
+      else
+      {
+        return num.ToString();
+      }
     }
 
   }
